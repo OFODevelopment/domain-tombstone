@@ -1,0 +1,9 @@
+# Crawling is deliberately ALLOWED.
+#
+# De-indexing myseeyo.com depends on Googlebot fetching these pages and
+# reading their noindex directive. Adding a Disallow here would block that
+# fetch and STRAND the old "MySeeYo - Personal AI Executive Staff" listing
+# in the index permanently. Do not add one.
+
+User-agent: *
+Allow: /

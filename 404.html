@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<title>myseeyo.com</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fbfbfa;
+    --fg: #1a1a18;
+    --muted: #6b6b66;
+    --rule: #e2e2dd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #16161a; --fg: #ececea; --muted: #8f8f89; --rule: #2b2b31; }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    background: var(--bg);
+    color: var(--fg);
+    font: 400 16px/1.6 ui-sans-serif, -apple-system, "Segoe UI", Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 30rem; text-align: center; }
+  h1 {
+    margin: 0 0 1.75rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 1.75rem auto; width: 3rem; }
+  p { margin: 0.5rem 0; color: var(--muted); }
+  a { color: inherit; text-underline-offset: 3px; }
+  a:hover { color: var(--fg); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Not found</h1>
+  <hr>
+  <p>This domain is not in service.</p>
+  <p><a href="/">myseeyo.com</a></p>
+</main>
+<script>
+  // Served with HTTP 404 by GitHub Pages, which is what unregisters the
+  // retired service worker when the browser re-fetches /sw.js.
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations()
+      .then(function (rs) { rs.forEach(function (r) { r.unregister(); }); })
+      .catch(function () {});
+  }
+  if (window.caches && caches.keys) {
+    caches.keys()
+      .then(function (ks) { ks.forEach(function (k) { caches.delete(k); }); })
+      .catch(function () {});
+  }
+</script>
+</body>
+</html>
